@@ -1,0 +1,12 @@
+
+Change Default view screen to show just the checked out gate cards
+    -Add resnexus reservation number?
+
+Add buttons to the bottom of view screen
+View All - Shows database of all cards
+Add Card - allows for adding of cards to the database
+Remove Card - allows for removing of cards to the database
+Search - search for a card by
+    Card Number
+    Site Number
+    Reservation Number?
