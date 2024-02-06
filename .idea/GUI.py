@@ -1,7 +1,7 @@
 import tkinter as tk
 from tkinter import ttk
 
-import showAll
+
 
 class GateCard:
     def __init__(self, card_number, card_id, checked_in):
@@ -50,7 +50,12 @@ class GateCardGUI:
         pass
 
     def show_all(self):
-        showAll.showAllScreen(self) #open the show all screen
+        # Open a new window for displaying all gate cards
+        show_all_window = tk.Toplevel(self.master)
+        show_all_window.title("Show All Gate Cards")
+
+        # Display "Show All" text in the new window
+        tk.Label(show_all_window, text="Show All").pack()
 
 
 if __name__ == "__main__":
