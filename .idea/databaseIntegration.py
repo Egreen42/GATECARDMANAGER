@@ -96,6 +96,6 @@ def removeFromDB(gatecard):
     return 0 #return a value that means failed
 
 '''
-FUNCTION IS TESTED WORKING
+FUNCTION IS TESTED WORKINGs
 '''
 
