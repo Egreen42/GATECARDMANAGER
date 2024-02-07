@@ -1,6 +1,8 @@
 import tkinter as tk
 from tkinter import ttk
 
+from databaseIntegration import readAll
+
 from showAllGateCards import ShowAllWindow
 
 
@@ -24,13 +26,14 @@ class GateCardGUI:
         tk.Label(master, text="Status").grid(row=0, column=2, padx=5, pady=5)
 
         # Display gate card data with separators
-        for i, card in enumerate(self.gate_cards):
-            tk.Label(master, text=card.card_number).grid(row=i * 2 + 1, column=0, padx=5, pady=5)
-            tk.Label(master, text=card.card_id).grid(row=i * 2 + 1, column=1, padx=5, pady=5)
-            tk.Label(master, text="Checked In" if card.checked_in else "Checked Out").grid(row=i * 2 + 1, column=2, padx=5, pady=5)
+        for i, card in enumerate(self.gate_cards): #only display if card is checked out
+            if(card.checked_in == 0):
+                tk.Label(master, text=card.card_number).grid(row=i * 2 + 1, column=0, padx=5, pady=5)
+                tk.Label(master, text=card.card_id).grid(row=i * 2 + 1, column=1, padx=5, pady=5)
+                tk.Label(master, text="Checked In" if card.checked_in else "Checked Out").grid(row=i * 2 + 1, column=2, padx=5, pady=5)
 
-            # Add separator line
-            ttk.Separator(master, orient="horizontal").grid(row=i * 2 + 2, column=0, columnspan=3, sticky="ew", pady=5)
+                # Add separator line
+                ttk.Separator(master, orient="horizontal").grid(row=i * 2 + 2, column=0, columnspan=3, sticky="ew", pady=5)
 
         # Add buttons
         tk.Button(master, text="Add Card", command=self.add_card).grid(row=i * 2 + 3, column=0, pady=10)
@@ -59,17 +62,7 @@ class GateCardGUI:
 
 
 if __name__ == "__main__":
-    # Sample gate card data
-
-    '''
-    THIS HERE IS WHERE THE DATA WILL BE FED INTO TO BE DISPLAYED
-    NEEDS TO BE UPDATED TO PULL FROM THE DATABASE
-    '''
-    gate_cards_data = [
-        GateCard("001", "ID001", True),
-        GateCard("002", "ID002", False),
-        GateCard("003", "ID003", True),
-    ]
+    gate_cards_data = readAll() #get all of the gate cards from the database
 
     root = tk.Tk()
     app = GateCardGUI(root, gate_cards_data)
