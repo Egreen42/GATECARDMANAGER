@@ -6,6 +6,8 @@ Add buttons to the bottom of view screen
 View All - Shows database of all cards
 Add Card - allows for adding of cards to the database
 Remove Card - allows for removing of cards to the database
+    Need to be able to put in site number first, then pull up matching cards
+    Do not remove until a valid CARD ID is entered
 Search - search for a card by
     Card Number
     Site Number
