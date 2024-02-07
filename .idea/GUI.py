@@ -1,6 +1,7 @@
 import tkinter as tk
 from tkinter import ttk
 
+from showAllGateCards import ShowAllWindow
 
 
 class GateCard:
@@ -39,7 +40,10 @@ class GateCardGUI:
 
     def add_card(self):
         # Implement logic for adding a new gate card
-        pass
+        add_card_window = tk.Toplevel(self.master)
+        add_card_window.title("Add New Gate Card")
+
+
 
     def remove_card(self):
         # Implement logic for removing a gate card
@@ -50,12 +54,8 @@ class GateCardGUI:
         pass
 
     def show_all(self):
-        # Open a new window for displaying all gate cards
-        show_all_window = tk.Toplevel(self.master)
-        show_all_window.title("Show All Gate Cards")
-
-        # Display "Show All" text in the new window
-        tk.Label(show_all_window, text="Show All").pack()
+        #Open a new window for displaying all gate cards
+        ShowAllWindow.show_all_gate_cards(self)
 
 
 if __name__ == "__main__":

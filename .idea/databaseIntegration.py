@@ -74,7 +74,7 @@ def addToDB(gatecard):
     number = gatecard.card_number
     id = gatecard.card_id
     checked = gatecard.checked_in
-    c.execute("INSERT INTO gateCards (Site, Card, Out) VALUES (?,?,?)", (id, number, checked))
+    c.execute("INSERT INTO gateCards (Site, Card, Out) VALUES (?,?,?)", (number, id, checked))
     conn.commit() #commit to the database
     return 1 #return a value that means succeeded
 
@@ -98,4 +98,7 @@ def removeFromDB(gatecard):
 '''
 FUNCTION IS TESTED WORKING
 '''
+
+
+
 
