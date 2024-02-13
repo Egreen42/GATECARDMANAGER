@@ -53,6 +53,7 @@ if __name__ == "__main__":
     # Example: Call the show_all_gate_cards method
     add_card_window.add_gate_card()
 
+
     root.mainloop()
 
 
