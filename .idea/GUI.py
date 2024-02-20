@@ -4,6 +4,7 @@ from tkinter import ttk
 from databaseIntegration import readAll
 
 from showAllGateCards import ShowAllWindow
+from showAddCardWindow import AddCardWindow
 
 
 class GateCard:
@@ -43,10 +44,7 @@ class GateCardGUI:
 
     def add_card(self):
         # Implement logic for adding a new gate card
-        add_card_window = tk.Toplevel(self.master)
-        add_card_window.title("Add New Gate Card")
-
-
+        AddCardWindow.add_gate_card(self)
 
     def remove_card(self):
         # Implement logic for removing a gate card
