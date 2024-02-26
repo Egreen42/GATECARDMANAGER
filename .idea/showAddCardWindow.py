@@ -41,7 +41,7 @@ class AddCardWindow:
         tk.Entry(add_card_window, textvariable=card_id_var).grid(row=1, column=1, padx=5, pady=5)
         tk.Checkbutton(add_card_window, variable=checked_in_var).grid(row=2, column=1, padx=5, pady=5)
 
-        tk.Button(add_card_window, text="Add Card", command=self.add_card(card_number_var, card_id_var, checked_in_var)).grid(row=3, column=0, columnspan=2, pady=10)
+        tk.Button(add_card_window, text="Add Card", command=AddCardWindow.add_card(self, card_number_var, card_id_var, checked_in_var)).grid(row=3, column=0, columnspan=2, pady=10)
 
 
 

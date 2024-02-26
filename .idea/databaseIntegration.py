@@ -66,7 +66,7 @@ def addToDB(gatecard):
 
     gatecards = readAll() #get all of the gate cards to check for existing ID
     for i in gatecards:
-        if i.card_id == gatecard.card_id:
+        if i.card_id == gatecard.cardID:
             print('Card Already Exists')
             #TODO This needs to have an error message outputted on the screen
             return 0 #return a value that means failed
