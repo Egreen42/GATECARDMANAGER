@@ -66,7 +66,7 @@ def addToDB(gatecard):
 
     gatecards = readAll() #get all of the gate cards to check for existing ID
     for i in gatecards:
-        if i.card_id == gatecard.cardID:
+        if i.card_id == gatecard.card_id:
             print('Card Already Exists')
             #TODO This needs to have an error message outputted on the screen
             return 0 #return a value that means failed
@@ -74,7 +74,7 @@ def addToDB(gatecard):
     number = gatecard.card_number
     id = gatecard.card_id
     checked = gatecard.checked_in
-    c.execute("INSERT INTO gateCards (Site, Card, Out) VALUES (?,?,?)", (number, id, checked))
+    c.execute("INSERT INTO gateCards (Site, Card, Out) VALUES (?,?,?)", (int(number), id, checked))
     conn.commit() #commit to the database
     return 1 #return a value that means succeeded
 

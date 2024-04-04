@@ -7,9 +7,9 @@ from databaseIntegration import addToDB
 
 class GateCard:
     def __init__(self, cardNumber, cardID, checkedIn):
-        self.cardNumber = cardNumber
-        self.cardID = cardID
-        self.checkedIn = checkedIn
+        self.card_number = cardNumber
+        self.card_id = cardID
+        self.checked_in = checkedIn
 class AddCardWindow:
     def __init__(self, master, gate_cards):
         self.master = master
